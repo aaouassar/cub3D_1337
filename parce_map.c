@@ -6,7 +6,7 @@
 /*   By: aaouassa <aaouassa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 10:57:02 by aaouassa          #+#    #+#             */
-/*   Updated: 2023/07/21 12:29:55 by aaouassa         ###   ########.fr       */
+/*   Updated: 2023/07/21 15:00:29 by aaouassa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,4 +72,30 @@ void    seconde_check(char *str, int i, int len)
     //     printf("error path\n");
     //     exit(1);
     // }
+}
+void     third_check(char *str)
+{
+    char **rgb;
+    t_rgb var;
+    // int f = 0;
+    // int c = 0;
+    int flag = 0;
+
+    while (*str == ' ' || *str == '\t')
+        str++;
+    if (str[0] == 'C')
+        flag = 1;
+    str++;
+    while (*str == ' ' || *str == '\t')
+        str++; 
+    rgb = ft_split(str, ',');
+    if ((ft_atoi(rgb[0]) < 0 || ft_atoi(rgb[0]) > 255) || (ft_atoi(rgb[1]) < 0 || ft_atoi(rgb[1]) > 255) || (ft_atoi(rgb[2]) < 0 || ft_atoi(rgb[2]) > 255))
+    {
+        printf("ERROR\n");
+        exit(1);
+    }
+    if(!flag)
+        var.f = (ft_atoi(rgb[0]) * 65536) + (ft_atoi(rgb[1]) * 256) + ft_atoi(rgb[2]);
+    else if(flag)
+        var.c = (ft_atoi(rgb[0]) * 65536) + (ft_atoi(rgb[1]) * 256) +  ft_atoi(rgb[2]);
 }

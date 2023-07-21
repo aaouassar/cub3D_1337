@@ -6,7 +6,7 @@
 /*   By: aaouassa <aaouassa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 07:21:00 by aaouassa          #+#    #+#             */
-/*   Updated: 2023/07/21 12:50:42 by aaouassa         ###   ########.fr       */
+/*   Updated: 2023/07/21 15:01:55 by aaouassa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@
 
 typedef struct  s_rgb
 {
-    int floor;
-    int ceilin;
+    int f;
+    int c;
 } t_rgb ;
 
 int	ft_strcmp(const char *s1, const char *s2);
@@ -39,6 +39,10 @@ int	ft_atoi(const char *str);
 
 int   first_check(char *str, int *x);
 void    seconde_check(char *str, int i, int len);
+void     third_check(char *str);
 
 
+void    ft_checknewline(char *str);
+void     ft_valid(char **map);
+int     ft_correct(char **map);
 #endif
